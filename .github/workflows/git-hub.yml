@@ -9,9 +9,8 @@ jobs:
     build-and-deploy:
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@master
-            - name: Merge by labeled
-              uses: devmasx/merge-branch@v1.1.0
-              with:
-                  label_name: 'merged in gh-pages'
-                  target_branch: 'gh-pages'
+            - name: "Checking to gh-pg"
+              run: |
+                  git checkout gh-pages
+                  git merge master
+                  |
