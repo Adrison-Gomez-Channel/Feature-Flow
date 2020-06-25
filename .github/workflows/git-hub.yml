@@ -8,7 +8,7 @@ on:
 jobs:
     build:
         runs-on: ubuntu-latest
-
+    steps:
         run: git checkout gh-pages
         run: git merge master
 
