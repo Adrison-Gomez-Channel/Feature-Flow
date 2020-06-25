@@ -1,0 +1,14 @@
+
+name: GitHub-Pages Deploy
+
+on:
+    pull_request:
+        branches: [master]
+
+jobs:
+    build:
+        runs-on: ubuntu-latest
+
+        run: git checkout gh-pages
+        run: git merge master
+
