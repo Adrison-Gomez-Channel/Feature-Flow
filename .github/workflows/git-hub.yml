@@ -6,9 +6,12 @@ on:
         branches: [master]
 
 jobs:
-    build:
+    build-and-deploy:
         runs-on: ubuntu-latest
-    steps:
-        run: git checkout gh-pages
-        run: git merge master
-
+        steps:
+            - uses: actions/checkout@master
+            - name: Merge by labeled
+              uses: devmasx/merge-branch@v1.1.0
+              with:
+                  label_name: 'merged in gh-pages'
+                  target_branch: 'gh-pages'
